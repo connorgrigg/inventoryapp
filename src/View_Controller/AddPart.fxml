@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="237.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.AddPartController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="99.0" prefWidth="312.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="323.0" prefWidth="451.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Part" wrappingWidth="82.205078125" />
+                  <ButtonBar layoutX="91.0" layoutY="26.0">
+                     <buttons>
+                        <RadioButton fx:id="inHouseAddButton" mnemonicParsing="false" onAction="#handleAddInHouse" text="In House">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="inHouseOutsourceAdd" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="addOutsourceButton" mnemonicParsing="false" onAction="#handleAddOutsource" text="Outsourced" toggleGroup="$inHouseOutsourceAdd">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </RadioButton>
+                     </buttons>
+                  </ButtonBar>
+                  <AnchorPane layoutX="20.0" layoutY="52.0" prefHeight="269.0" prefWidth="436.0">
+                     <children>
+                        <AnchorPane layoutY="14.0" prefHeight="199.0" prefWidth="456.0">
+                           <children>
+                              <TilePane>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+                                    <TextField fx:id="PartIDField" disable="true" promptText="Auto Gen" />
+                                 </children>
+                              </TilePane>
+                              <TilePane layoutY="38.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="35.00000152364373" />
+                                    <TextField fx:id="PartNameField" promptText="Part Name" />
+                                 </children>
+                              </TilePane>
+                              <TilePane layoutY="72.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" wrappingWidth="35.00000497698784" />
+                                    <TextField fx:id="PartInvField" promptText="Inv " />
+                                 </children>
+                              </TilePane>
+                              <TilePane layoutY="106.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price/Cost" />
+                                    <TextField fx:id="PartPriceField" promptText="Price/Cost" />
+                                 </children>
+                              </TilePane>
+                              <Text layoutX="43.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" />
+                              <TextField fx:id="PartMaxField" layoutX="110.0" layoutY="140.0" promptText="Max" />
+                              <Text layoutX="283.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" />
+                              <TextField fx:id="PartMinField" layoutX="349.0" layoutY="140.0" prefHeight="27.0" prefWidth="109.0" promptText="Min" />
+                              <TilePane layoutY="172.0" prefHeight="27.0" prefWidth="283.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Machine ID" />
+                                    <TextField fx:id="AddMachineID" editable="false" promptText="Mach ID" />
+                                 </children>
+                              </TilePane>
+                              <TilePane layoutX="239.0" layoutY="172.0" prefHeight="27.0" prefWidth="283.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name" />
+                                    <TextField fx:id="AddCompanyName" editable="false" promptText="Comp NM" />
+                                 </children>
+                              </TilePane>
+                           </children>
+                        </AnchorPane>
+                        <ButtonBar layoutX="48.0" layoutY="228.0">
+                           <buttons>
+                              <Button fx:id="AddPartSave" mnemonicParsing="false" onAction="#handleSaveAdd" text="Save" />
+                              <Button fx:id="AddPartCancel" mnemonicParsing="false" onAction="#handleCancelAdd" text="Cancel" />
+                           </buttons>
+                        </ButtonBar>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
